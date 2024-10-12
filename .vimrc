@@ -5,7 +5,6 @@ set nocp
 set t_Co=256
 filetype plugin on
 filetype plugin indent on
-" Sets tab space to 4
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -13,7 +12,6 @@ set hlsearch
 set incsearch
 nnoremap <esc><esc> :noh<return><esc>
 runtime! ftplugin/man.vim
-
 
 inoremap jk <Esc>
 nnoremap <silent> <Leader>s :Files<CR>
@@ -30,18 +28,22 @@ nnoremap <silent> <Leader>h/ :History/<CR>
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 call plug#begin()
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sensible'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'frazrepo/vim-rainbow' 
+Plug 'frazrepo/vim-rainbow'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
-let g:rainbow_active = 1 
+let g:rainbow_active = 1
 
-colorscheme catppuccin-mocha
+syntax on
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
+
 
 " COC CONFIGS
 " https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
